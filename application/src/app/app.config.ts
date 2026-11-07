@@ -1,11 +1,15 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideRouter } from '@angular/router';
+
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), provideClientHydration()
+    provideRouter(routes), provideClientHydration(withEventReplay()),
+    provideFirebaseApp(() => initializeApp(environment.firebase))
   ]
 };
