@@ -41,6 +41,16 @@ runtime environment variables. Firebase web configuration is included in
 rendered HTML for browser initialization and is visible to visitors; it is not
 a secret. Protect your Firebase resources with Firebase Security Rules.
 
+## Registration
+
+Enable the Email/Password sign-in provider in Firebase Authentication before
+using `/register`. The form checks passwords against the project's current
+Firebase password policy before creating an account. Policy validation requires
+network access. Firebase signs users in automatically after registration.
+For production SSR, add the app's public hostnames to `security.allowedHosts`
+in `angular.json`; otherwise Angular falls back to client-side rendering and
+the server-provided Firebase configuration is unavailable.
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
