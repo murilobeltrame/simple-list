@@ -3,7 +3,7 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "56451a01-29ed-45f8-86fa-89221e117551"
+    "analytics": "432868f2-589b-4cab-af2a-727f4362d4e5"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -25,15 +25,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/material-theme.scss", "src/styles.css"],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "security": {
-              "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "styles": ["src/material-theme.scss", "src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -49,14 +41,12 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "namedChunks": true
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
